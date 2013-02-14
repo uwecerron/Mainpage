@@ -34,18 +34,18 @@ class Node {
 	}
 
 	// softmax function
-	/*
-     * 
-     * 
-     */
-	public int[] softmax() {
-		Node Magnitude;
-		int[] results = new int[inputs.size()];
+	
+	public float[] softmax() {
+		float Magnitude;//sum of all inputs
+		float[] results = new float[inputs.size()];
 		for (int i = 0; i < inputs.size(); i++) {
-			Magnitude = inputs.get(i);
+			Magnitude += inputs.get(i).getWeight();
+		}
+		for(int i=0;i<inputs.size();i++){
+		results[i]=inputs.get(i).getWeight()/Magnitude;
 		}
 
-		return results;
+		return results;// weights divided by the sum of all weights
 	}
 
 	// fire transactions are handled here
