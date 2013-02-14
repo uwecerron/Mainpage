@@ -1,4 +1,4 @@
-//uwe cerron
+//a simple xor perceptron
 
 import java.util.*;
 
